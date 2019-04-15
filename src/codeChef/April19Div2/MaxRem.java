@@ -15,6 +15,8 @@ import java.util.PriorityQueue;
  * The answer to the puzzle is the maximum of Ai%Aj, taken over all valid i, j.
 
 
+ todo make it faster to support 10^5 size array under 1sec
+
  *
  */
 public class MaxRem {
