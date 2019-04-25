@@ -70,6 +70,8 @@ import java.util.*;
  An optimal solution is to build fences around the topmost plant (with length 4),
  around the remaining eight plants (with length 12) and around the hole between them (with length 4). The total length is 4+12+4=20.
  *
+ * ### Reduce data collection to plants only and then run BFS
+ *
  */
 public class Fencing {
 
@@ -123,6 +125,7 @@ public class Fencing {
 
         int test= Integer.parseInt(reader.readLine());
         while (test >0){
+            Long st = System.currentTimeMillis();
             String[] inp = reader.readLine().split(" ");
 
            rows= Integer.parseInt(inp[0]);
@@ -142,6 +145,7 @@ public class Fencing {
                  inp = reader.readLine().split(" ");
                 field[Integer.parseInt(inp[0])-1][Integer.parseInt(inp[1])-1]=1;
             }
+
            /* for (int i = 0; i < rows; i++) {
 
                 System.out.println(Arrays.toString(field[i]));
@@ -191,6 +195,8 @@ public class Fencing {
 
            // System.out.println("\n\n\n");
             test--;
+            Long et = System.currentTimeMillis();
+            System.out.println((st-et)/1000);
         }
 
 

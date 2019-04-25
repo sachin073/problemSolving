@@ -73,11 +73,22 @@ public class ForGF {
 
             int counter=0;
 
+            int lastJump= 0;
             for (int i = 0; i <size; i++) {
                 boolean jumpSucced=true;
                 for (int j = i; j <size; j++) {
 
-                    int jump = arrayJump(indexes,j);
+                    int jump=-1;
+                    for (int k = lastJump; k < indexes.size() ; k++) {
+
+                        if (indexes.get(k) >= j){
+                            jump=indexes.get(k);
+                            lastJump=k;
+                            break;
+                        }
+
+                    }
+
                     if (jump==-1){//no near place ahead
                         jumpSucced=false;
                         break;
@@ -95,23 +106,21 @@ public class ForGF {
 
     }
 
-    static boolean isInRange(List<Integer>values, int start,int end){
+    static int arrayJump(List<Integer> array,int number,Integer lastJump){
 
-        for (Integer i :values) {
-            if (i>=start && i<=end ){
-                return true;
-            }
+        for (int i = lastJump; i < array.size() ; i++) {
+             lastJump=new Integer(i);
+            if (array.get(i) >=number)
+                return array.get(i);
+
         }
-        return false;
-    }
 
-
-    static int arrayJump(List<Integer> array,int number){
-
+/*
         for (Integer i : array) {
             if (i>=number)
                 return i;
         }
+*/
 
         return -1;
     }
