@@ -7,15 +7,19 @@ import java.util.Comparator;
  */
 public class Node implements Comparator<Integer>{
     // Field to create comparision and also the actual valuable data
-    int value;
-
-    Node left=null;
-    Node right=null;
+    public int value;
+    public int height;
+    public Node left=null;
+    public Node right=null;
 
     public Node(int value) {
         this.value = value;
     }
 
+    public Node(int value, int height) {
+        this.value = value;
+        this.height = height;
+    }
 
     @Override
     public int compare(Integer o1, Integer o2) {
