@@ -33,6 +33,6 @@ public class Node implements Comparator<Integer>{
 
     @Override
     public String toString() {
-        return value+"";
+        return "["+value+" "+height+" ]";
     }
 }
